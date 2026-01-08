@@ -1,0 +1,30 @@
+<% layout("/layouts/boilerplate")%>
+
+    <div class="row">
+        <div class="col-6 offset-3">
+            <br>
+                <h3>Create New User on BookMyStay:</h3>
+            <form method="post" action="/signup" novalidate class="needs-validation">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input name="username" id="username" placeholder="Enter the Username" type="text" class="form-control" required>
+                    <div class="valid-feedback">Username looks good!</div>
+                    <div class="invalid-feedback">Please enter a Valid Username</div>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-Mail</label>
+                    <input name="email" id="email" placeholder="Enter your email" type="email" class="form-control" required>
+                    <div class="valid-feedback">Email looks good!</div>
+                    <div class="invalid-feedback">Please enter a Valid email</div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input name="password" id="password" placeholder="Enter Strong Password" type="password" class="form-control" required>
+                    <div class="valid-feedback">Password looks good!</div>
+                    <div class="invalid-feedback">Please enter  Valid Password</div>
+                </div>
+                <br>
+                    <button class="btn btn-dark add-btn">SignUp</button>
+            </form>
+        </div>
+    </div>
