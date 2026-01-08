@@ -31,7 +31,7 @@ async function main() {
 
 main()
     .then(() => {
-        console.log("Connected to DB");
+        console.log("Connected to DB",mongoose.connection.name);
     })
     .catch(err => console.log(err));
 
