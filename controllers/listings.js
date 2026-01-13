@@ -99,3 +99,8 @@ module.exports.deleteListing = async (req, res) => {
     req.flash("success","listing Deleted!");
     res.redirect("/listings");
 };
+
+module.exports.reserveListing = (req, res) => {
+    req.flash("success", "🎉 Reservation confirmed! We’ve saved your stay.");
+    res.redirect(`/listings/${req.params.id}`);
+  };

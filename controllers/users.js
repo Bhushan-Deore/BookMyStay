@@ -31,6 +31,7 @@ module.exports.login = async (req, res) => {
     let { username } = req.body;
     req.flash("success", `Welcome Back "${username}"!`);
     let redirectUrl = res.locals.redirectUrl || "/listings";
+    delete req.session.redirectUrl;
     res.redirect(redirectUrl);
 };
 

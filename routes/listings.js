@@ -26,4 +26,7 @@ router.put("/:id", isLoggedIn,isOwner,upload.single('listing[image]'), validateL
 //Delete Listing Route
 router.delete("/:id", isLoggedIn,isOwner, wrapAsync(listingController.deleteListing));
 
+//reserve button route
+router.get("/:id/reserve", isLoggedIn, listingController.reserveListing);
+
 module.exports = router;
