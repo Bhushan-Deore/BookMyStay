@@ -32,6 +32,10 @@ async function main() {
 main()
     .then(() => {
         console.log("Connected to DB",mongoose.connection.name);
+        
+        app.listen(8080, () => {
+            console.log("Server is listening on port 8080");
+        });
     })
     .catch(err => console.log(err));
 
@@ -110,6 +114,3 @@ app.use((err, req, res, next) => {
     // res.status(statusCode).send(message);
 });
 
-app.listen(8080, () => {
-    console.log("Server is listening on port 8080");
-});

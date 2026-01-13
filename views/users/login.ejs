@@ -1,7 +1,7 @@
 <% layout("/layouts/boilerplate")%>
 
-    <div class="row">
-        <div class="col-6 offset-3">
+    <div class="auth-wrapper">
+        <div class="auth-card">
             <br>
                 <h3>Login on BookMyStay:</h3>
             <form method="post" action="/login" novalidate class="needs-validation">
@@ -16,8 +16,8 @@
                     <div class="invalid-feedback">Please enter  Valid Password</div>
                 </div>
                 <br>
-                    <button class="btn btn-dark add-btn">Login</button> 
-                    <a href="/signup" class="btn btn-dark add-btn col-3 offset-5">
+                    <button class="auth-btn">Login</button> 
+                    <a href="/signup" class="auth-link">
                         Create User
                     </a>
             </form>
