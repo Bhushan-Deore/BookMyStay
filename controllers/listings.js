@@ -2,8 +2,29 @@ const Listing = require("../models/listing.js");
 const cloudinary = require("../cloudConfig.js");
 
 module.exports.index = async (req, res) => {
-    const allListings = await Listing.find({});
-    res.render("listings/index.ejs", { allListings });
+    const { category, search } = req.query;
+    let query = {};
+
+    // CATEGORY FILTER
+    if (category) {
+        query.category = { $in: [category] };
+    }
+
+    // SEARCH FILTER (TITLE)
+    if (search) {
+        query.title = { 
+            $regex: search, 
+            $options: "i"  // case-insensitive
+        };
+    }
+
+    const allListings = await Listing.find(query);
+
+    res.render("listings/index.ejs", { 
+        allListings,
+        selectedCategory: category,
+        searchText: search
+    });
 };
 
 module.exports.renderNewForm =  (req, res) => {
@@ -89,7 +110,7 @@ module.exports.editListing = async (req, res) => {
         
         await listing.save();
       }
-    req.flash("success","listing Updated!");
+    req.flash("success","Listing Updated Sucessfully!");
     res.redirect(`/listings/${id}`);
 };
 

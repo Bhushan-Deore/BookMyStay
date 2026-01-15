@@ -335,6 +335,11 @@ form {
   flex-wrap: wrap;
 }
 
+#filters a{
+  color: inherit;
+  text-decoration: none;
+}
+
 .filter {
   text-align: center;
   margin-right: 2rem;
@@ -348,6 +353,10 @@ form {
 
 .filter p {
   font-size: 0.8rem;
+}
+
+.active {
+  border-bottom: 2px solid #fe424d;
 }
 
 @media (max-width: 576px) {

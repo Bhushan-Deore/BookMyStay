@@ -43,7 +43,14 @@ const listingSchema = new Schema({
     owner:{
         type: Schema.Types.ObjectId,
         ref: "User",
-    }
+    },
+    category:[
+        {
+        type: String,
+        enum:["room","iconic","mountains","castels","pools","camping","farms","sea","arctic","boating"],
+        default:"room",
+        }
+    ]
 });
 
 // When a listing is deleted, delete its linked reviews

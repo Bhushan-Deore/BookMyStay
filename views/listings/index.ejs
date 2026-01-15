@@ -2,52 +2,68 @@
 
         <!-- <h3>All Listings</h3> -->
         <div id="filters">
-            <div class="filter">
-                <div><i class="fa-solid fa-fire" style="color: #e10e0e;"></i></div>   
+
+            <a href="/listings" class="filter">
+                <div><i class="fa-solid fa-fire" style="color:#e10e0e;"></i></div>
                 <p>Stay Spotlight</p>
-            </div>
-            <div class="filter">
+            </a>
+        
+            <a href="/listings?category=room" class="filter <%= selectedCategory === 'room' ? 'active' : '' %>">
                 <div><i class="fa-solid fa-bed"></i></div>
                 <p>Room Stays</p>
-            </div>
-            <div class="filter">
+            </a>
+        
+            <a href="/listings?category=iconic" class="filter <%= selectedCategory === 'iconic' ? 'active' : '' %>">
                 <div><i class="fa-solid fa-building-columns"></i></div>
                 <p>Iconic Stays</p>
-            </div>
-            <div class="filter">
+            </a>
+        
+            <a href="/listings?category=mountains" class="filter <%= selectedCategory === 'mountains' ? 'active' : '' %>">
                 <div><i class="fa-solid fa-mountain-sun"></i></div>
                 <p>Mountains</p>
-            </div>
-            <div class="filter">
+            </a>
+        
+            <a href="/listings?category=castels" class="filter <%= selectedCategory === 'castels' ? 'active' : '' %>">
                 <div><i class="fa-brands fa-fort-awesome"></i></div>
                 <p>Castels</p>
-            </div>
-            <div class="filter">
-                <div><i class="fa-solid fa-person-swimming"></i></i></div>
+            </a>
+        
+            <a href="/listings?category=pools" class="filter <%= selectedCategory === 'pools' ? 'active' : '' %>">
+                <div><i class="fa-solid fa-person-swimming"></i></div>
                 <p>Amazing Pools</p>
-            </div>
-            <div class="filter">
-                <div><i class="fa-solid fa-tent"></i></i></div>
+            </a>
+        
+            <a href="/listings?category=camping" class="filter <%= selectedCategory === 'camping' ? 'active' : '' %>">
+                <div><i class="fa-solid fa-tent"></i></div>
                 <p>Camping</p>
-            </div>
-            <div class="filter">
+            </a>
+        
+            <a href="/listings?category=farms" class="filter <%= selectedCategory === 'farms' ? 'active' : '' %>">
                 <div><i class="fa-solid fa-wheat-awn"></i></div>
                 <p>Farms</p>
-            </div>
-            <div class="filter">
-                <div><i class="fa-solid fa-water"></i></i></div>
+            </a>
+        
+            <a href="/listings?category=sea" class="filter <%= selectedCategory === 'sea' ? 'active' : '' %>">
+                <div><i class="fa-solid fa-water"></i></div>
                 <p>Sea View</p>
-            </div>
-            <div class="filter">
+            </a>
+        
+            <a href="/listings?category=arctic" class="filter <%= selectedCategory === 'arctic' ? 'active' : '' %>">
                 <div><i class="fa-solid fa-person-skiing"></i></div>
                 <p>Arctic</p>
-            </div>
-            <div class="filter">
+            </a>
+        
+            <a href="/listings?category=boating" class="filter <%= selectedCategory === 'boating' ? 'active' : '' %>">
                 <div><i class="fa-solid fa-ship"></i></div>
                 <p>Boating</p>
-            </div>
+            </a>
+        
         </div>
+        
         <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+            <% if (allListings.length === 0) { %>
+                <p class="text-center mt-4">No listings found 😕</p>
+            <% } %>
             <% for( let listing of allListings) { %>
                 <a href="listings/<%= listing._id %>" class="listing-link">
                     <div class="card">

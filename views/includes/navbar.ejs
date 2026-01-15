@@ -10,12 +10,14 @@
                 <a class="nav-link" href="/listings">Explore</a>
             </div>
             <div class="navbar-nav ms-auto">
-                <form class="d-flex" role="search">
+                <form class="d-flex" role="search" method="GET" action="/listings">
                     <div class="search-wrapper">
                         <div class="search-pill">
                             <input 
                                 type="text" 
                                 class="search-input" 
+                                name="search"
+                                value="<%= searchText || '' %>"
                                 placeholder="Search stays"
                             />
                             <button class="search-btn">
