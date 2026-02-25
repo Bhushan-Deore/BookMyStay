@@ -46,6 +46,10 @@ module.exports.saveRedirectUrl = (req,res,next)=>{
 module.exports.isOwner = async(req,res,next)=>{
     let { id } = req.params;
     let listing = await Listing.findById(id).populate("owner");
+    if (!listing){
+        req.flash("error","Listing you requested for, does not exists!");
+        return res.redirect("/listings");
+    }
     if (!listing.owner._id.equals(res.locals.currUser._id)){
         req.flash("error",`You don't have permission to Proceed! This Listing is Owned by ${listing.owner.username}`);
         return res.redirect(`/listings/${id}`);
@@ -56,6 +60,10 @@ module.exports.isOwner = async(req,res,next)=>{
 module.exports.isReviewOwner = async(req,res,next)=>{
     let{id,reviewId} = req.params;
     let review = await Review.findById(reviewId);
+    if (!review){
+        req.flash("error","Review you requested for, does not exists!");
+        return res.redirect(`/listings/${id}`);
+    }
     if (review.username !== res.locals.currUser.username){
         req.flash("error",`You don't have permission to Delete this review! This Review is Owned by ${review.username}`);
         return res.redirect(`/listings/${id}`);
