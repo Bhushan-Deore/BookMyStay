@@ -43,7 +43,10 @@ app.use(methodOverride("_method"));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public"), {
+    maxAge: "1d",
+    etag: true,
+}));
 app.engine("ejs", ejsMate);
 
 const store = MongoStore.create({
@@ -62,7 +65,7 @@ const sessionOptions = {
     store,
     secret: process.env.SECRET,
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     cookie:{
         expires : Date.now()+ 7 * 24 * 60 * 60 * 1000,
         maxAge: 7 * 24 * 60 * 60 * 1000,
@@ -114,4 +117,3 @@ app.use((err, req, res, next) => {
     console.log(err);
     // res.status(statusCode).send(message);
 });
-

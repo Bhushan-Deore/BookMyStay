@@ -12,13 +12,12 @@ module.exports.index = async (req, res) => {
 
     // SEARCH FILTER (TITLE)
     if (search) {
-        query.title = { 
-            $regex: search, 
-            $options: "i"  // case-insensitive
-        };
+        query.$text = { $search: search.trim() };
     }
 
-    const allListings = await Listing.find(query);
+    const allListings = await Listing.find(query)
+        .select("title image price")
+        .lean();
 
     res.render("listings/index.ejs", { 
         allListings,
@@ -63,7 +62,10 @@ module.exports.createNewListing = async (req, res) => {
 
 module.exports.showListing = async (req, res) => {
     let { id } = req.params;
-    const listing = await Listing.findById(id).populate("reviews").populate("owner");
+    const listing = await Listing.findById(id)
+        .populate("reviews")
+        .populate("owner", "username")
+        .lean();
     if(!listing){
         req.flash("error","Listing you requested for, does not exists!");
         return res.redirect("/listings");        
@@ -73,7 +75,7 @@ module.exports.showListing = async (req, res) => {
 
 module.exports.renderEditForm = async (req, res) => {
     let { id } = req.params;
-    const listing = await Listing.findById(id);
+    const listing = await Listing.findById(id).lean();
     if(!listing){
         req.flash("error","Listing you requested for, does not exists!");
         return res.redirect("/listings");        
