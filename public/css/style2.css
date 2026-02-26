@@ -449,3 +449,264 @@ form {
   background: #e11d48;
   transform: scale(1.05);
 }
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 5.25rem;
+  }
+
+  .container {
+    padding: 0.85rem 0.9rem 1.25rem;
+  }
+
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1040;
+    min-height: 5.25rem;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.1);
+  }
+
+  .navbar .container-fluid {
+    padding: 0.55rem 0.9rem;
+    gap: 0.5rem;
+  }
+
+  .navbar-brand {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .navbar-toggler {
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 0.75rem;
+    border: 1px solid #ddd;
+    padding: 0.45rem;
+  }
+
+  .navbar-collapse {
+    margin-top: 0.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .navbar-nav {
+    gap: 0.35rem;
+  }
+
+  .navbar-nav .nav-link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    padding: 0.6rem 0.75rem;
+    border-radius: 0.75rem;
+  }
+
+  .navbar-nav .nav-link:active {
+    background-color: #f7f7f7;
+  }
+
+  .navbar form.d-flex {
+    width: 100%;
+  }
+
+  .search-wrapper {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0.25rem 0 0.5rem;
+    height: auto;
+  }
+
+  .search-pill {
+    width: 100%;
+    max-width: 100%;
+    min-height: 48px;
+    padding: 5px 6px 5px 14px;
+    border-radius: 999px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  }
+
+  .search-input {
+    font-size: 0.95rem;
+    line-height: 1.3;
+  }
+
+  .search-btn {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+
+  #filters {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 0.8rem;
+    margin-top: 0.9rem;
+    padding: 0.1rem 0.15rem 0.5rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  #filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter {
+    margin: 0;
+    min-width: 84px;
+    padding: 0.6rem 0.45rem;
+    border-radius: 0.9rem;
+    flex: 0 0 auto;
+    opacity: 0.95;
+  }
+
+  .filter i {
+    font-size: 1.15rem;
+  }
+
+  .filter p {
+    margin: 0.35rem 0 0;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .filter.active,
+  .active.filter {
+    border-bottom: none;
+    background-color: rgba(254, 66, 77, 0.12);
+    box-shadow: inset 0 0 0 1px rgba(254, 66, 77, 0.24);
+  }
+
+  .row.row-cols-lg-3.row-cols-md-2.row-cols-sm-1 {
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  .row.row-cols-lg-3.row-cols-md-2.row-cols-sm-1 > .listing-link {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .row.row-cols-lg-3.row-cols-md-2.row-cols-sm-1 > .listing-link .card {
+    width: 100%;
+    margin-bottom: 0;
+    border-radius: 0.95rem !important;
+    overflow: hidden;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.09);
+  }
+
+  .row.row-cols-lg-3.row-cols-md-2.row-cols-sm-1 > .listing-link .card-img-top {
+    width: 100% !important;
+    height: 14.5rem !important;
+    margin: 0;
+    border-radius: 0 !important;
+  }
+
+  .row.row-cols-lg-3.row-cols-md-2.row-cols-sm-1 > .listing-link .card-text {
+    padding: 0.95rem 1rem 1.15rem;
+    line-height: 1.45;
+    color: #2a2a2a;
+  }
+
+  .row.row-cols-lg-3.row-cols-md-2.row-cols-sm-1 > .listing-link .card-text b {
+    display: block;
+    margin-bottom: 0.2rem;
+    font-size: 1rem;
+  }
+
+  .show-page-title,
+  .show-main-card,
+  .show-review-section {
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .show-page-title,
+  .show-main-card {
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+
+  .show-main-card {
+    padding-bottom: 0.25rem;
+  }
+
+  .show-main-card .card-body {
+    padding: 0.9rem 1rem 1rem !important;
+  }
+
+  .show-img {
+    width: 100% !important;
+    height: 15rem;
+    border-radius: 0.85rem;
+    margin-top: 0.2rem;
+  }
+
+  .show-main-card .btns {
+    width: 100%;
+    gap: 0.7rem !important;
+  }
+
+  .show-main-card .btns a,
+  .show-main-card .btns form,
+  .show-main-card .btns .btn {
+    width: 100% !important;
+    max-width: 100%;
+  }
+
+  .show-main-card .btns [class*="col-"] {
+    flex: 0 0 100%;
+  }
+
+  .show-review-section {
+    margin-top: 1.35rem !important;
+  }
+
+  .show-review-section textarea.form-control {
+    min-height: 110px;
+  }
+
+  .show-review-section > form .btn {
+    width: 100% !important;
+  }
+
+  .row .col-8.offset-2,
+  .row .col-7.offset-2 {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .row .col-8.offset-2 form .form-control,
+  .row .col-8.offset-2 form .form-select,
+  .row .col-7.offset-2 form .form-control,
+  .row .col-7.offset-2 form .form-select {
+    width: 100%;
+    min-height: 48px;
+    border-radius: 0.75rem;
+  }
+
+  .row .col-8.offset-2 form textarea.form-control,
+  .row .col-7.offset-2 form textarea.form-control {
+    min-height: 120px;
+  }
+
+  .row .col-8.offset-2 .mb-3,
+  .row .col-7.offset-2 .mb-3 {
+    margin-bottom: 1rem !important;
+  }
+
+  .row .col-8.offset-2 button.add-btn,
+  .row .col-7.offset-2 button.add-btn {
+    width: 100%;
+    min-height: 48px;
+    border-radius: 0.8rem;
+    font-weight: 600;
+  }
+}
