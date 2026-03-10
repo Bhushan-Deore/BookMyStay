@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top" data-tour="navbar">
     <div class="container-fluid">
         <a class="navbar-brand" href="/listings" style="color: #fe424d;font-size:1rem;font-weight: 800;"><i class="fa-solid fa-person-walking-luggage"></i> BookMyStay</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
@@ -12,7 +12,7 @@
             <div class="navbar-nav ms-auto">
                 <form class="d-flex" role="search" method="GET" action="/listings">
                     <div class="search-wrapper">
-                        <div class="search-pill">
+                        <div class="search-pill" data-tour="search">
                             <input 
                                 type="text" 
                                 class="search-input" 
@@ -27,10 +27,11 @@
                     </div>
                   </form>
             </div>
-            <div class="navbar-nav ms-auto">
+            <div class="navbar-nav ms-auto nav-right">
                 <a class="nav-link" href="/listings/new">Host Your Stay</a>
+                <button type="button" class="nav-link btn btn-link nav-tour-trigger" data-tour-trigger aria-label="Start BookMyStay tutorial">Help / Tour</button>
                 <% if (!currUser) { %>
-                    <a class="nav-link" href="/login">Signup/Log In</a>
+                    <a class="nav-link" href="/login" data-tour="auth">Signup/Log In</a>
                 <% } else { %>
                     <a class="nav-link" href="/logout">Log Out</a>
                 <% } %> 

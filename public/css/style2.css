@@ -41,6 +41,28 @@ img {
   font-weight: 600 !important;
 }
 
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.nav-tour-trigger {
+  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x) !important;
+  margin: 0;
+  border: none;
+  color: #222 !important;
+  font-weight: 600 !important;
+  text-decoration: none;
+}
+
+.nav-tour-trigger:hover,
+.nav-tour-trigger:focus {
+  color: #222 !important;
+  text-decoration: none;
+}
+
 /* Navbar collapse (mobile fix) */
 .navbar-collapse {
   background-color: #fff;
@@ -53,6 +75,11 @@ img {
   }
 
   .navbar-nav {
+    gap: 0.5rem;
+  }
+
+  .nav-right {
+    align-items: flex-start;
     gap: 0.5rem;
   }
 

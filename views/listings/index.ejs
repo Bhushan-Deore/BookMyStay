@@ -1,7 +1,7 @@
 <% layout("/layouts/boilerplate")%>
 
         <!-- <h3>All Listings</h3> -->
-        <div id="filters">
+        <div id="filters" data-tour="filters">
 
             <a href="/listings" class="filter">
                 <div><i class="fa-solid fa-fire" style="color:#e10e0e;"></i></div>
@@ -25,7 +25,7 @@
         
             <a href="/listings?category=castels" class="filter <%= selectedCategory === 'castels' ? 'active' : '' %>">
                 <div><i class="fa-brands fa-fort-awesome"></i></div>
-                <p>Castels</p>
+                <p>Castles</p>
             </a>
         
             <a href="/listings?category=pools" class="filter <%= selectedCategory === 'pools' ? 'active' : '' %>">
@@ -66,7 +66,7 @@
             <% } %>
             <% for( let listing of allListings) { %>
                 <a href="listings/<%= listing._id %>" class="listing-link">
-                    <div class="card">
+                    <div class="card" data-tour="listing-card">
                         <img src="<%= listing.image.url%>" class="card-img-top" alt="listing_image"
                             style="height:20rem">
                         <div class="card-body">
